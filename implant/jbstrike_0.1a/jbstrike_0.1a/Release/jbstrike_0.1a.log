@@ -1,0 +1,18 @@
+﻿  Agent.cpp
+  Command.cpp
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\Command.cpp(9,16): error C2039: 'contains': is not a member of 'std::map<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>>'
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\Command.cpp(6): message : see declaration of 'std::map<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>>'
+  Download.cpp
+  jbstrike_0.1a.cpp
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\Command.cpp(9,16): error C2039: 'contains': is not a member of 'std::map<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>>'
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\Command.cpp(6): message : see declaration of 'std::map<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>>'
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\jbstrike_0.1a.cpp(29,29): error C2039: 'Get': is not a member of 'Agent'
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\Agent.cpp(3): message : see declaration of 'Agent'
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\jbstrike_0.1a.cpp(29,33): error C2143: syntax error: missing ')' before '='
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\jbstrike_0.1a.cpp(29,32): error C3861: 'Get': identifier not found
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\jbstrike_0.1a.cpp(29,41): error C2059: syntax error: ')'
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\jbstrike_0.1a.cpp(32,37): error C3861: 'split': identifier not found
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\jbstrike_0.1a.cpp(36,16): error C2039: 'RunCommand': is not a member of 'Command'
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\Command.cpp(4): message : see declaration of 'Command'
+  Shell.cpp
+  Upload.cpp

