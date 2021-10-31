@@ -1,5 +1,9 @@
 #pragma once
 
+// IP / PORT
+
+#define C2_IP = "127.0.0.1"
+#define C2_PORT = 5000
 
 // Profile URLS
 #define TASK_URI = "/tasks/"
