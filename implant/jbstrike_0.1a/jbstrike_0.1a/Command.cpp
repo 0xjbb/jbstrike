@@ -17,6 +17,8 @@ void Command::RegisterCommand(std::string name, std::function<void()> func) {
 
 	// reflection
 bool Command::ExecuteCommand(std::string name) {
-	
+	if (!HasCommand(name)) {
+		Commands[name]();
+	}
 }
 
