@@ -24,7 +24,7 @@ public:
 	}
 
 	void Register() {
-		GetComputerNameW();
+		//GetComputerNameW();
 
 	
 	}

