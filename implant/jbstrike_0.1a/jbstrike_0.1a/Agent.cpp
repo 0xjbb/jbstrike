@@ -2,9 +2,13 @@
 
 
 void Agent::Register() {
-	//GetComputerNameW();
+	wchar_t computerName[MAX_COMPUTERNAME_LENGTH + 1];
+	DWORD size = sizeof(ComputerName) / sizeof(computerName[0]);
 
+	GetComputerNameW(computerName, &size);
+	std::wstring test = string(computerName);
 
+	std::cout<< computerName << std::endl;
 }
 
 Agent::Agent(std::string ip, unsigned int port) {
@@ -30,8 +34,6 @@ void Agent::SetArgs(std::vector<std::string> args) {
 
 void Agent::shell() {
 	
-
-
 }
 
 void Agent::upload() {
