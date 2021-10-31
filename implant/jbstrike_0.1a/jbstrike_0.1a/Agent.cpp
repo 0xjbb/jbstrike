@@ -19,7 +19,11 @@ std::string Agent::Get(std::string path) {
 	
 }
 
-std::string Agent::Get(std::string path) {
+std::string Agent::Post(std::string path, std::string data) {
 	// path = path + "/" + AgentID + "/"
+
+}
+
+void Agent::shell() {
 
 }

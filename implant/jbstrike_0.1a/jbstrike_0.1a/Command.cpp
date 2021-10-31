@@ -9,8 +9,10 @@ bool Command::HasCommand(std::string command) {
 	return false;
 }
 
-void Command::RegisterCommand(std::string name, Agent function) {
-	Commands[name] = function;
+void Command::RegisterCommand(std::string name, FnPtr func) {
+	if (!HasCommand(name)) {
+		Commands[name] = func;
+	}
 }
 
 	// reflection

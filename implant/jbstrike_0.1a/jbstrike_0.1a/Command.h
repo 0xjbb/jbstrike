@@ -5,13 +5,14 @@
 #include <string>
 #include <map>
 
+typedef void (*FnPtr)();
 
 class Command
 {
-	std::map<std::string, std::string> Commands;
+	std::map<std::string, FnPtr> Commands;
 public:
 	bool HasCommand(std::string command);
-	void RegisterCommand(std::string name, Agent function);
+	void RegisterCommand(std::string name, FnPtr func);
 	bool ExecuteCommand(std::string name);
 };
 
