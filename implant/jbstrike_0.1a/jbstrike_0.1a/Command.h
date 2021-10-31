@@ -12,6 +12,6 @@ class Command
 public:
 	bool HasCommand(std::string command);
 	void RegisterCommand(std::string name, std::function<void()> func);
-	bool ExecuteCommand(std::string name);
+	void ExecuteCommand(std::string name);
 };
 

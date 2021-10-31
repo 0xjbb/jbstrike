@@ -143,18 +143,12 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Command.cpp" />
-    <ClCompile Include="Download.cpp" />
     <ClCompile Include="jbstrike_0.1a.cpp" />
-    <ClCompile Include="Shell.cpp" />
-    <ClCompile Include="Upload.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="Download.h" />
-    <ClInclude Include="Shell.h" />
-    <ClInclude Include="Upload.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
