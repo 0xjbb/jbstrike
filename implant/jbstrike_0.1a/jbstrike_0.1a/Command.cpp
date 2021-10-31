@@ -1,25 +1,20 @@
 #include "Command.h"
+#include "Agent.h"
 
-
-class Command
-{
-	std::map<std::string, std::string> Commands;
-public:
-	bool HasCommand(std::string command) {
-		if (Commands.contains(command)) {
-			return true;
-		}
-
-		return false;
+bool Command::HasCommand(std::string command) {
+	if (Commands.contains(command)) {
+		return true;
 	}
 
-	void RegisterCommand(std::string name, std::string function) {
-		Commands[name] = function;
-	}
+	return false;
+}
+
+void Command::RegisterCommand(std::string name, Agent function) {
+	Commands[name] = function;
+}
 
 	// reflection
-	bool ExecuteCommand(std::string name) {
+bool Command::ExecuteCommand(std::string name) {
 	
-	}
-};
+}
 
