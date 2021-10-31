@@ -1,18 +1,17 @@
 #pragma once
-
+#include <functional>
 #include <iostream>
 #include <vector>
 #include <string>
 #include <map>
 
-typedef void (*FnPtr)();
 
 class Command
 {
-	std::map<std::string, FnPtr> Commands;
+	std::map<std::string, std::function<void()>> Commands;
 public:
 	bool HasCommand(std::string command);
-	void RegisterCommand(std::string name, FnPtr func);
+	void RegisterCommand(std::string name, std::function<void()> func);
 	bool ExecuteCommand(std::string name);
 };
 

@@ -27,3 +27,11 @@ std::string Agent::Post(std::string path, std::string data) {
 void Agent::shell() {
 
 }
+
+void Agent::upload() {
+
+}
+
+void Agent::download() {
+
+}

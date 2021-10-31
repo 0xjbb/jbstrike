@@ -9,7 +9,7 @@ bool Command::HasCommand(std::string command) {
 	return false;
 }
 
-void Command::RegisterCommand(std::string name, FnPtr func) {
+void Command::RegisterCommand(std::string name, std::function<void()> func) {
 	if (!HasCommand(name)) {
 		Commands[name] = func;
 	}
