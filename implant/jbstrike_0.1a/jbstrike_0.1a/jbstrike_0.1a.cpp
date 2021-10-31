@@ -35,17 +35,13 @@ int main()
 		if (task != "") {
 			std::vector <std::string> Task = split(task);
 			std::vector <std::string> args;
-			args = std::vector<std::string>(Task.begin() + 1, Task.end());
+			args = std::vector<std::string>(Task.begin() + 1, Task.end()); // @todo check if Task has more than 1
 			std::string Cmd = Task[0];
 
 			std::cout << Cmd;
 
 			if (cmdHandler.HasCommand(Cmd)) {
-				std::string result;
-				
 				cmdHandler.ExecuteCommand(Cmd);
-
-				agent.Post(RETURN_URI, result);
 			}		
 		}
 

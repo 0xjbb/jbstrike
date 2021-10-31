@@ -29,7 +29,9 @@ void Agent::SetArgs(std::vector<std::string> args) {
 
 
 void Agent::shell() {
-	std::cout << "Shell function called" << std::endl;
+	
+
+
 }
 
 void Agent::upload() {
@@ -39,3 +41,5 @@ void Agent::upload() {
 void Agent::download() {
 
 }
+
+//void Agent::ListDirectory() {}
