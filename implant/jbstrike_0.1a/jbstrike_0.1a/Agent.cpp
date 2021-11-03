@@ -1,20 +1,15 @@
 #include "Agent.h"
 
 
-void Agent::Register() {
-	wchar_t computerName[MAX_COMPUTERNAME_LENGTH + 1];
-	DWORD size = sizeof(ComputerName) / sizeof(computerName[0]);
+void Agent::Register(std::string ip, unsigned int port) {
+	const int buffer_size = MAX_COMPUTERNAME_LENGTH + 1;
+	char buffer[buffer_size];
+	DWORD lpnSize = buffer_size;
 
-	GetComputerNameW(computerName, &size);
-	std::wstring test = string(computerName);
+	if (GetComputerNameA(buffer, &lpnSize) == FALSE)
+		throw std::runtime_error("Something went wrong.");
+	ComputerName = std::string{ buffer };
 
-	std::cout<< computerName << std::endl;
-}
-
-Agent::Agent(std::string ip, unsigned int port) {
-	ipAddress = ip;
-	port = port;
-	Register();
 }
 
 
@@ -30,10 +25,14 @@ std::string Agent::Post(std::string path, std::string data) {
 void Agent::SetArgs(std::vector<std::string> args) {
 	FunctionArguments = args;
 }
-
+//re-write this bullshit, each command in own class.
 
 void Agent::shell() {
 	
+}
+
+void Agent::powershell() {
+
 }
 
 void Agent::upload() {

