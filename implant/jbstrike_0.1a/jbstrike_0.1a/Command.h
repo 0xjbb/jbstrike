@@ -5,9 +5,8 @@
 #include <string>
 #include <map>
 
-
 class Command
-{
+{	
 	std::map<std::string, std::function<void()>> Commands;
 public:
 	bool HasCommand(std::string command);

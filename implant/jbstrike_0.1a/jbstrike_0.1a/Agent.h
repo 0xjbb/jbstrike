@@ -28,7 +28,7 @@ public:
 	std::string Get(std::string path);
 	std::string Post(std::string path, std::string data);
 	void SetArgs(std::vector<std::string> args);
-
+	std::vector<std::string> GetArgs();
 	void shell();
 	void powershell();
 	void upload();

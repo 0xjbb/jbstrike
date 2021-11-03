@@ -11,7 +11,7 @@ bool Command::HasCommand(std::string command) {
 
 void Command::RegisterCommand(std::string name, std::function<void()> func) {
 	if (!HasCommand(name)) {
-		Commands[name] = func;
+		Commands.insert(std::pair<std::string, std::function<void()>>(name, func));
 	}
 }
 
