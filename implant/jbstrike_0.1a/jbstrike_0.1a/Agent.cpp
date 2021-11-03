@@ -25,6 +25,8 @@ std::string Agent::Post(std::string path, std::string data) {
 void Agent::SetArgs(std::vector<std::string> args) {
 	FunctionArguments = args;
 }
+
+
 //re-write this bullshit, each command in own class.
 
 void Agent::shell() {

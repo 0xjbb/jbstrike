@@ -13,8 +13,8 @@
 #define UPLOAD_CMD "upload"
 #define DOWNLOAD_CMD "download"
 #define SHELL_CMD "shell"
-
-
+#define POWERSHELL_CMD "powershell"
+#define PSIMPORT_CMD "shell"
 // Other settings.
 
 // Sleep in ms
