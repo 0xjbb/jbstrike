@@ -25,7 +25,6 @@ public:
 	// ip/port for c2server
 	std::string Get(std::string path);
 	std::string Post(std::string path, std::string data);
-	void SetArgs(std::vector<std::string> args);
 	//std::vector<std::string> GetArgs();
 	static void shell(std::vector<std::string> args);
 	static void powershell(std::vector<std::string> args);

@@ -1,0 +1,5 @@
+﻿  Agent.cpp
+  Command.cpp
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\Command.cpp(5,15): error C2039: 'contains': is not a member of 'std::map<std::string,std::function<void (std::vector<std::string,std::allocator<std::string>>)>,std::less<std::string>,std::allocator<std::pair<const std::string,std::function<void (std::vector<std::string,std::allocator<std::string>>)>>>>'
+C:\Users\admin\Desktop\Smallc2\implant\jbstrike_0.1a\jbstrike_0.1a\Command.h(10): message : see declaration of 'std::map<std::string,std::function<void (std::vector<std::string,std::allocator<std::string>>)>,std::less<std::string>,std::allocator<std::pair<const std::string,std::function<void (std::vector<std::string,std::allocator<std::string>>)>>>>'
+  jbstrike_0.1a.cpp

@@ -5,10 +5,8 @@ bool Command::HasCommand(std::string command) {
 	if (Commands.contains(command)) {
 		return true;
 	}
-
 	return false;
 }
-
 
 void Command::RegisterCommand(std::string name, std::function<void(std::vector<std::string>)> func) {
 	if (!HasCommand(name)) {
@@ -16,7 +14,7 @@ void Command::RegisterCommand(std::string name, std::function<void(std::vector<s
 	}
 }
 
-	// reflection
+// reflection
 void Command::ExecuteCommand(std::string name, std::vector<std::string> args) {
 	if (HasCommand(name)) {
 		Commands.at(name)(args);

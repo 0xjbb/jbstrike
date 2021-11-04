@@ -15,22 +15,28 @@ void Agent::Register(std::string ip, unsigned int port) {
 
 std::string Agent::Get(std::string path) {
 	// path = path + "/" + AgentID + "/"
-	return "shell testing";
+	return "shell|testing";
 }
 
 std::string Agent::Post(std::string path, std::string data) {
 	// path = path + "/" + AgentID + "/"
 	return "POST func";
 }
-void Agent::SetArgs(std::vector<std::string> args) {
-	FunctionArguments = args;
-}
 
 
 //re-write this bullshit, each command in own class.
 
 void Agent::shell(std::vector<std::string> args) {
-	
+	if (args.size() == 0) {
+		//Post(RETURN_PATH, error="No Arguments you fucking retard.");
+		return;
+	}
+
+	for (std::vector<std::string>::iterator t = args.begin(); t != args.end(); ++t) {
+		std::cout << *t << std::endl;
+	}
+
+	std::cout << "Testing 123" << std::endl;
 }
 
 void Agent::powershell(std::vector<std::string> args) {
