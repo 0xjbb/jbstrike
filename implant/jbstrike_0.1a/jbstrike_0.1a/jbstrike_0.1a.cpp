@@ -41,7 +41,6 @@ int main()
 			std::string Cmd = Task[0];
 
 			if (cmdHandler.HasCommand(Cmd)) {
-				agent.SetArgs(args);
 				cmdHandler.ExecuteCommand(Cmd, args);
 			}		
 		}
