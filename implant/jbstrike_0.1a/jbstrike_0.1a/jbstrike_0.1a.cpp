@@ -42,7 +42,7 @@ int main()
 
 			if (cmdHandler.HasCommand(Cmd)) {
 				agent.SetArgs(args);
-				cmdHandler.ExecuteCommand(Cmd);
+				cmdHandler.ExecuteCommand(Cmd, args);
 			}		
 		}
 

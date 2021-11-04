@@ -9,16 +9,17 @@ bool Command::HasCommand(std::string command) {
 	return false;
 }
 
-void Command::RegisterCommand(std::string name, std::function<void()> func) {
+
+void Command::RegisterCommand(std::string name, std::function<void(std::vector<std::string>)> func) {
 	if (!HasCommand(name)) {
-		Commands.insert(std::pair<std::string, std::function<void()>>(name, func));
+		Commands.insert(std::pair<std::string, std::function<void(std::vector<std::string>)>>(name, func));
 	}
 }
 
 	// reflection
-void Command::ExecuteCommand(std::string name) {
+void Command::ExecuteCommand(std::string name, std::vector<std::string> args) {
 	if (HasCommand(name)) {
-		Commands.at(name)();
+		Commands.at(name)(args);
 	}
 }
 

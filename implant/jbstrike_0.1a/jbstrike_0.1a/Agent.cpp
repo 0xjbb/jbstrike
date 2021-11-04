@@ -29,7 +29,7 @@ void Agent::SetArgs(std::vector<std::string> args) {
 
 //re-write this bullshit, each command in own class.
 
-void Agent::shell() {
+void Agent::shell(std::vector<std::string> args) {
 	
 }
 
