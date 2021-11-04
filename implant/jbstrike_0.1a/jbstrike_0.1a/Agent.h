@@ -17,7 +17,6 @@ protected:
 	std::vector<std::string> FunctionArguments;
 	unsigned int port;
 
-
 	std::string PsScript = "";
 
 
