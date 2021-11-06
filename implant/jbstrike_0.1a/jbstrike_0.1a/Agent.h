@@ -28,6 +28,7 @@ public:
 	//std::vector<std::string> GetArgs();
 	static void shell(std::vector<std::string> args);
 	static void powershell(std::vector<std::string> args);
+	//static void psimport(std::vector<std::string> args);
 	static void upload(std::vector<std::string> args);
 	static void download(std::vector<std::string> args);
 

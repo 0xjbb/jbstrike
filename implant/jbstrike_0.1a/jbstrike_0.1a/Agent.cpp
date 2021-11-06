@@ -14,11 +14,14 @@ void Agent::Register(std::string ip, unsigned int port) {
 
 
 std::string Agent::Get(std::string path) {
+	//DECODE DATA.
+
 	// path = path + "/" + AgentID + "/"
 	return "shell|testing";
 }
 
 std::string Agent::Post(std::string path, std::string data) {
+	//ENCODE DATA
 	// path = path + "/" + AgentID + "/"
 	return "POST func";
 }
