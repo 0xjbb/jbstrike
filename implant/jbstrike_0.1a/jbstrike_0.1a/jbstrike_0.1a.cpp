@@ -39,6 +39,7 @@ int main()
 			std::vector <std::string> Task = split(task);
 			std::vector <std::string> args;
 			args = std::vector<std::string>(Task.begin() + 1, Task.end()); // @todo check if Task has more than 1
+			
 			std::string Cmd = Task[0];
 
 			if (cmdHandler.HasCommand(Cmd)) {
