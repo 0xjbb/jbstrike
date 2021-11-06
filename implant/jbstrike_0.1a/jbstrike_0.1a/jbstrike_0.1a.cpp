@@ -11,10 +11,9 @@
 #include "Config.h"
 #include "Agent.h"
 #include "Command.h"
+#include "Util.h"
 
 #pragma comment(lib, "winhttp.lib")
-
-std::vector <std::string> split(std::string cmd, char delimiter = '|');
 
 int main()
 {
@@ -49,16 +48,4 @@ int main()
 
 		Sleep(SLEEP_TIME);
 	}
-}
-
-
-std::vector <std::string> split(std::string cmd, char delimiter) {
-	std::string line;
-	std::vector <std::string> vec;
-	std::stringstream ss(cmd);
-
-	while (std::getline(ss, line, delimiter)) {
-		vec.push_back(line);
-	}
-	return vec;
 }
