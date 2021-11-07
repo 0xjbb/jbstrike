@@ -6,3 +6,4 @@
 #include <windows.h>
 
 std::vector <std::string> split(std::string cmd, char delimiter = '|');
+LPWSTR string2lpwstr(std::string inputStr);

