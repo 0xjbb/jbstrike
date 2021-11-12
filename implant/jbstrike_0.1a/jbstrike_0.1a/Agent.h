@@ -7,6 +7,7 @@
 
 #include "Config.h"
 
+#pragma comment(lib, "winhttp.lib")
 
 class Agent {
 
