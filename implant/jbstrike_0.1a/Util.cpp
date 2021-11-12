@@ -12,9 +12,11 @@ std::vector <std::string> split(std::string cmd, char delimiter) {
 	return vec;
 }
 
+std::string base64_encode(std::string_view data) {
+	return "";
+}
 
-LPWSTR string2lpwstr(std::string inputStr) {
 
-
-
+std::string base64_decode(std::string_view data) {
+	return "";
 }

