@@ -132,6 +132,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="Http.cpp" />
     <ClCompile Include="jbstrike_0.1a.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
@@ -150,6 +152,7 @@
     <ClInclude Include="Agent.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="Http.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
