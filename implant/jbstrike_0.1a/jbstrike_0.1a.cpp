@@ -31,12 +31,6 @@ int main()
 	//cmdHandler.RegisterCommand(PSIMPORT_CMD, std::bind(&Agent::psimport, agent));
 
 
-
-
-
-
-
-
 	while (true) {
 		std::string task = agent.Get(TASK_URI);
 
