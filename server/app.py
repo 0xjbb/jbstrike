@@ -1,23 +1,25 @@
 from flask import Flask
-import database
+from task import Task
+
 
 app = Flask(__name__)
 
-# GET TASKS
-# implant routes
-@app.route('/task/get/<agent_id>')
-def task_handler(agent_id):
-    return ""
+
+# Task Handler.
+@app.route('/task/<sget>/<agent_id>', methods=['GET', 'POST'])
+def task_handler(sget, agent_id):
+    task = Task(agent_id)
+    if sget == "get":
+        return task.get()
+
+    task.set()
+
+    return "error?"
+
 
 @app.route("/ret/<agent_id>", methods=['post'])
 def return_data(agent_id):
 
-
-    return 1
-
-# client routes
-@app.route('/task/set/<agent_id>', methods=['GET'])
-def set_task(agent_id):
     return 1
 
 
