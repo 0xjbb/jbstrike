@@ -36,6 +36,10 @@ def return_data(sget, agent_id):
 def serve_file(filename):
     return ""
 
+@app.route('/ping/<agent_id>', methods=['GET'])
+def serve_file(agent_id):
+
+    return ""
 
 if __name__ == "__main__":
     app.run()

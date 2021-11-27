@@ -1,0 +1,8 @@
+﻿  Agent.cpp
+  dllmain.cpp
+  Encryption.cpp
+  Request.cpp
+C:\Users\admin\Desktop\Smallc2\implant.new\implant\implant\Request.cpp(14,31): warning C4267: 'initializing': conversion from 'size_t' to 'DWORD', possible loss of data
+  Util.cpp
+  Generating Code...
+  implant.vcxproj -> C:\Users\admin\Desktop\Smallc2\implant.new\implant\x64\Debug\implant.dll
