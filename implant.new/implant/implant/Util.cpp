@@ -10,3 +10,9 @@ std::vector <std::string> util::split(std::string cmd, char delimiter) {
 		}
 		return vec;
 }
+
+
+std::string util::GetPcName() {
+
+	return "";
+}

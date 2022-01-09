@@ -4,16 +4,21 @@
 #include <string_view>
 
 #include "util.h"
-
 #include "config.h"
+#include "Request.h"
+#include "Command.h"
 
 class Agent
 {
 private:
-	void Register() const;
+	Request hRequest;
+	Command hCommand;
+
+
+	void Register();
 
 public:
-	Agent(); // inject DI Container.
-	void run() const;// literally just run bro.
+	Agent(Request req, Command cmd); // inject DI Container.
+	void run();// literally just run bro.
 };
 

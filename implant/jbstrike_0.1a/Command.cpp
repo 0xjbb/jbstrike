@@ -1,5 +1,4 @@
 #include "Command.h"
-#include "Agent.h"
 
 bool Command::HasCommand(std::string command) {
 	if (Commands.contains(command)) {
