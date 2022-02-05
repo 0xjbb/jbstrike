@@ -1,4 +1,7 @@
 #pragma once
+#include <string>
+#include <Windows.h>
+#include <wininet.h>
 
 namespace jbstrike {
 	class Http

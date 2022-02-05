@@ -7,8 +7,6 @@
 #include "TypeDefs.h"
 
 
-
-
 namespace jbstrike {
 
 	class Application
