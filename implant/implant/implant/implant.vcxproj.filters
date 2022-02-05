@@ -24,6 +24,18 @@
     <ClCompile Include="Command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Http.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Invoker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Download.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -36,6 +48,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TypeDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Http.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Invoker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Download.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

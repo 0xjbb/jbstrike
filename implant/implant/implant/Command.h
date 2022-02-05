@@ -7,7 +7,7 @@ namespace jbstrike {
 	public:
 		virtual ~Command() {
 		}
-		virtual void Execute() const = 0;
+		virtual void Execute(std::vector<std::string> args) const = 0;
 
 	};
 }
