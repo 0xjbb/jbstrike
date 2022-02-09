@@ -5,9 +5,14 @@
 #include "Config.h"
 #include "Http.h"
 #include "TypeDefs.h"
-
+#include "util.h"
 
 namespace jbstrike {
+
+	struct ReceivedCmd {
+		std::string Command;
+		std::vector<std::string> Args;
+	};
 
 	class Application
 	{
@@ -18,6 +23,7 @@ namespace jbstrike {
 	public:
 		Application();
 		void Run();
+		ReceivedCmd ParseData(std::string data);
 
 	};
 

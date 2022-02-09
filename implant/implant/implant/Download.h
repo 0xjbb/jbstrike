@@ -15,6 +15,6 @@ namespace jbstrike {
 
 	public:
 		Downloader(Http* http) : http(http) {}
-		void Execute() const override;
+		void Execute(std::vector<std::string> args) const override;
 	};
 }

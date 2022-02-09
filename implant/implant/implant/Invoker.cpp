@@ -1,9 +1,9 @@
 #include "Invoker.h"
 
 // execute command
-void jbstrike::Invoker::Run(std::string name) {
+void jbstrike::Invoker::Run(std::string name, std::vector<std::string> args) {
 	if (this->commands.find(name) != this->commands.end()) {
-		this->commands.at(name)->Execute();
+		this->commands.at(name)->Execute(args);
 	}
 }
 
