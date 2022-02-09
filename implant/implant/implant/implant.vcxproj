@@ -159,6 +159,7 @@
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Download.cpp" />
+    <ClCompile Include="Exit.cpp" />
     <ClCompile Include="Http.cpp" />
     <ClCompile Include="Invoker.cpp" />
     <ClCompile Include="Util.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Download.h" />
+    <ClInclude Include="Exit.h" />
     <ClInclude Include="Http.h" />
     <ClInclude Include="Invoker.h" />
     <ClInclude Include="TypeDefs.h" />

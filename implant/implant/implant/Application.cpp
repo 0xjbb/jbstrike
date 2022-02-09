@@ -15,8 +15,6 @@ void jbstrike::Application::Run() {
 
 			Commands.Run(ParsedCommand.Command, ParsedCommand.Args);
 
-		}else if (ParsedCommand.Command == "die") {
-			ExitProcess(1);
 		}else {
 			//http.Post("/output", "undefined function");
 		}
