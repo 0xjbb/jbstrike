@@ -8,10 +8,11 @@
 #include "util.h"
 
 namespace jbstrike {
-
+	// probably move this somewhere else...
 	struct ReceivedCmd {
 		std::string Command;
 		std::vector<std::string> Args;
+		int NumberOfArguments;
 	};
 
 	class Application
