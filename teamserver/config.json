@@ -1,0 +1,9 @@
+{
+    "Database":  { 
+        "DBFile": "~/.jbstrike/db/jbstrike.db"
+    },
+
+    "Server":{
+        "DefaultPort": 42069
+    }
+}
