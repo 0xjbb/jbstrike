@@ -21,3 +21,16 @@ func NewServer(gConfig Config) ServerHandler {
 
 	return s
 }
+
+func HandleServerRequests(route string) {
+	/*
+		/client/listener/{id}/start
+		/client/listener/{id}/stop
+		/client/listener/{id}/remove
+		/client/listeners/list
+
+		/client/agents/list
+		/client/agent/{id}/{command}
+	*/
+
+}

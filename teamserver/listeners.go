@@ -10,10 +10,11 @@ func (list *Listener) Listen() {
 }
 
 func HandleAgentHTTPRequests(route string) {
-
+	//Route will be the requested URL query string
+	// All strings will be stored in the config.json to make it easier to change
 	switch route {
 	case gConfig.Listener.CheckInCmd:
-		checkin()
+		//checkin()
 		break
 	case gConfig.Listener.DownloadCmd:
 		break
