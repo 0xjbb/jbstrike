@@ -13,13 +13,20 @@ func (list *Listener) Listen() {
 
 	router.PathPrefix("/agent/{uuid}/{function}").HandlerFunc(HandleAgentHTTPRequests())
 
-	srv := &http.Server{
+	list.s = &http.Server{
 		Handler: router,
-		Addr:    ":",
+		Addr:    ":" + string(list.ListenPort),
 	}
 
-	go srv.ListenAndServe()
+	go list.s.ListenAndServe()
 
+}
+
+func NewListener(port int) Listener {
+	l := Listener{}
+
+	l.ListenPort = port
+	return l
 }
 
 func HandleAgentHTTPRequests() func(w http.ResponseWriter, r *http.Request) {
