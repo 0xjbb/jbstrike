@@ -9,6 +9,11 @@ func (sHandler *ServerHandler) Start() {
 
 }
 
+// Add some error checknig later
+func (sHandler *ServerHandler) ParseConfig(sConfig Config) {
+	sHandler.ServerPort = sConfig.Server.DefaultPort
+}
+
 func NewServer(gConfig Config) ServerHandler {
 	s := ServerHandler{}
 

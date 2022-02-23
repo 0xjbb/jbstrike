@@ -16,6 +16,10 @@ type Config struct {
 	Server struct {
 		DefaultPort int
 	}
+
+	Listener struct {
+		CheckInCmd string
+	}
 }
 
 // Load JSON Config file.
