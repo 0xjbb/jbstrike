@@ -8,11 +8,11 @@
     },
 
     "Listener": {
-        "CheckInCmd": "/agent/{uuid}/checkin/",
-        "DownloadCmd": "/agent/{uuid}/download/",
-        "UploadCmd": "/agent/{uuid}/upload/",
-        "ExecCmd": "/agent/{uuid}/exec/",
-        "ExecAssemblyCmd": "/agent/{uuid}/assembly/"
+        "CheckInCmd": "checkin",
+        "DownloadCmd": "download",
+        "UploadCmd": "upload",
+        "ExecCmd": "exec",
+        "ExecAssemblyCmd": "assembly"
     }
 
 }
