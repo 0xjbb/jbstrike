@@ -1,6 +1,8 @@
 package main
 
 func main() {
-	server := ServerHandler{}
+	gConfig := LoadConfig("~/.jbstrike/conf/config.json")
+
+	server := NewServer(gConfig)
 	server.Start()
 }
