@@ -1,11 +1,15 @@
 package main
 
+import "net/http"
+
 type ServerHandler struct {
 	ServerPort int
+	Listeners  []Listener
+	s          *http.Server
 }
 
 func (sHandler *ServerHandler) Start() {
-	s := &http.server{}
+	sHandler.s = &http.Server{}
 
 }
 
@@ -24,13 +28,38 @@ func NewServer(gConfig Config) ServerHandler {
 
 func HandleServerRequests(route string) {
 	/*
-		/client/listener/{id}/start
-		/client/listener/{id}/stop
-		/client/listener/{id}/remove
+		/client/listener/start --
+		/client/listener/stop -- pass ID as post var
+		/client/listener/remove -- pass ID as post var
 		/client/listeners/list
 
 		/client/agents/list
 		/client/agent/{id}/{command}
 	*/
+	switch route {
+	case "/client/listener/start":
+		//l := Listener{}
+		//go l.Listen()
+		break
+	case "/client/listener/stop":
 
+		break
+	case "/client/listener/remove":
+
+		break
+	case "/client/listeners/list":
+		// list id:port for all listeners.
+		break
+
+	case "/client/agents/list":
+		// list all agents, their listeners and some info.
+		break
+	case "/client/agent/{id}/{command}": // figure this out.
+
+		break
+	default:
+		// error.
+		break
+
+	}
 }
