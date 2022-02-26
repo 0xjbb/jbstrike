@@ -1,10 +1,14 @@
-package main
+package webserver
 
-import "net/http"
+import (
+	"github.com/0xjbb/jbstrike/pkg/cfg"
+	"github.com/0xjbb/jbstrike/pkg/listeners"
+	"net/http"
+)
 
 type ServerHandler struct {
 	ServerPort int
-	Listeners  []Listener
+	Listeners  []listeners.Listener
 	s          *http.Server
 }
 
@@ -14,11 +18,11 @@ func (sHandler *ServerHandler) Start() {
 }
 
 // Add some error checknig later
-func (sHandler *ServerHandler) ParseConfig(sConfig Config) {
+func (sHandler *ServerHandler) ParseConfig(sConfig cfg.Config) {
 	sHandler.ServerPort = sConfig.Server.DefaultPort
 }
 
-func NewServer(gConfig Config) ServerHandler {
+func NewServer(gConfig cfg.Config) ServerHandler {
 	s := ServerHandler{}
 
 	s.ParseConfig(gConfig)

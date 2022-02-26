@@ -1,4 +1,4 @@
-package main
+package cfg
 
 import (
 	"encoding/json"
@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-// Struct to parse json config data.
+// Struct to parse json cfg data.
 type Config struct {
 	Database struct {
 		DBFile string
@@ -18,7 +18,11 @@ type Config struct {
 	}
 
 	Listener struct {
-		CheckInCmd string
+		CheckInCmd      string
+		DownloadCmd     string
+		UploadCmd       string
+		ExecCmd         string
+		ExecAssemblyCmd string
 	}
 }
 
