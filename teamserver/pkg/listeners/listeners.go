@@ -15,7 +15,7 @@ type Listener struct {
 func (nList *Listener) Listen() {
 	router := mux.NewRouter()
 
-	router.PathPrefix("/agent/{uuid}/{function}").HandlerFunc(HandleAgentHTTPRequests(nList.gConfig))
+	router.PathPrefix("/agent/{uuid}/{function}").HandlerFunc(nList.HandleAgentHTTPRequests())
 
 	nList.s = &http.Server{
 		Handler: router,
@@ -33,7 +33,7 @@ func NewListener(port int, gConfig cfg.Config) Listener {
 	return l
 }
 
-func HandleAgentHTTPRequests(gConfig cfg.Config) func(w http.ResponseWriter, r *http.Request) {
+func (nList *Listener) HandleAgentHTTPRequests() func(w http.ResponseWriter, r *http.Request) {
 	//Route will be the requested URL query string
 	// All strings will be stored in the cfg.json to make it easier to change
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -43,16 +43,16 @@ func HandleAgentHTTPRequests(gConfig cfg.Config) func(w http.ResponseWriter, r *
 		route := vars["function"]
 
 		switch route {
-		case gConfig.Listener.CheckInCmd:
+		case nList.gConfig.Listener.CheckInCmd:
 			//checkin()
 			break
-		case gConfig.Listener.DownloadCmd:
+		case nList.gConfig.Listener.DownloadCmd:
 			break
-		case gConfig.Listener.UploadCmd:
+		case nList.gConfig.Listener.UploadCmd:
 			break
-		case gConfig.Listener.ExecCmd:
+		case nList.gConfig.Listener.ExecCmd:
 			break
-		case gConfig.Listener.ExecAssemblyCmd:
+		case nList.gConfig.Listener.ExecAssemblyCmd:
 			break
 
 		}

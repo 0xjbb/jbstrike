@@ -1,6 +1,6 @@
 # JBStrike
 
-A really shit c2 for me to learn c++.
+Currently doesn't work, still W.I.P
 
 ## Features
 
@@ -16,6 +16,11 @@ A really shit c2 for me to learn c++.
 
 ## How to use
 
-- Don't.
+- Don't (it doesn't work)
 
+## Future...
+
+- Execute-Assembly
+- LDAP Domain Queryer
+- DLL Based Plugin System
 

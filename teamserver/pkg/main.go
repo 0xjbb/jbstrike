@@ -2,7 +2,6 @@ package main
 
 /**
 Will just implement http for now, will upgrade to https at a later date.maybe
-
 **/
 import (
 	"github.com/0xjbb/jbstrike/pkg/cfg"
