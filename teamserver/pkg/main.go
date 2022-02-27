@@ -4,8 +4,8 @@ package main
 Will just implement http for now, will upgrade to https at a later date.maybe
 **/
 import (
-	"github.com/0xjbb/jbstrike/pkg/cfg"
-	"github.com/0xjbb/jbstrike/pkg/webserver"
+	"github.com/0xjbb/jbstrike/teamserver/pkg/cfg"
+	"github.com/0xjbb/jbstrike/teamserver/pkg/webserver"
 )
 
 var (

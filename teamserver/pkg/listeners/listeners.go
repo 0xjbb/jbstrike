@@ -1,7 +1,7 @@
 package listeners
 
 import (
-	"github.com/0xjbb/jbstrike/pkg/cfg"
+	"github.com/0xjbb/jbstrike/teamserver/pkg/cfg"
 	"github.com/gorilla/mux"
 	"net/http"
 )

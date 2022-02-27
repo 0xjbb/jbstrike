@@ -1,4 +1,4 @@
-module github.com/0xjbb/jbstrike
+module github.com/0xjbb/jbstrike/teamserver
 
 go 1.17
 
