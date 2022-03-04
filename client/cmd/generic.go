@@ -43,6 +43,19 @@ func init(){
 		LongHelp: "Copy a file.",
 		Run: func(){}
 	})
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "shell",
+		Help: "Execute a shell cmd",
+		LongHelp: "Execute a shell cmd.",
+		Run: func(){}
+	})
+
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "powershell",
+		Help: "Execute a pwoershell cmd",
+		LongHelp: "Execute a powershell cmd.",
+		Run: func(){}
+	})
 
 
 }
