@@ -38,6 +38,13 @@ func init(){
 	})
 
 	genericCommand.AddCommand(&grumble.Command{
+		Name: "mv",
+		Help: "Move a file.",
+		LongHelp: "Move a file.",
+		Run: func(){}
+	})
+
+	genericCommand.AddCommand(&grumble.Command{
 		Name: "cp",
 		Help: "Copy a file",
 		LongHelp: "Copy a file.",

@@ -11,7 +11,7 @@ func init(){
 
 	genericCommand.AddCommand(&grumble.Command{
 		Name: "use",
-		Help: "USe a session.",
+		Help: "Use a session.",
 		LongHelp: "",
 		Run: func(){}
 	})
@@ -20,11 +20,7 @@ func init(){
 		Name: "session",
 		Help: "Use a session.",
 		LongHelp: "",
-		Run: func(){
-
-
-			
-		}
+		Run: func(){}
 	})
 
 
