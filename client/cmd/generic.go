@@ -4,7 +4,7 @@ func init(){
 	genericCommand := &grumble.Command{
 		Name: "Generic",
 		Help: "Generic Functions",
-		LongHelp: "Generic Functions."
+		LongHelp: ""
 	}
 
 	App.AddCommand(genericCommand)
@@ -37,6 +37,12 @@ func init(){
 		Run: func(){}
 	})
 
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "cp",
+		Help: "Copy a file",
+		LongHelp: "Copy a file.",
+		Run: func(){}
+	})
 
 
 }
