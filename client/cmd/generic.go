@@ -1,0 +1,38 @@
+package cmd
+
+func init(){
+	genericCommand := &grumble.Command{
+		Name: "Generic",
+		Help: "Generic Functions",
+		LongHelp: "Generic Functions."
+	}
+
+	App.AddCommand(genericCommand)
+
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "download",
+		Help: "Download a file from your cwd to the implant.",
+		LongHelp: "Download a file from your cwd to the implant.",
+		Run: func(){}
+	})
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "ls",
+		Help: "List directory",
+		LongHelp: "Lists directory.",
+		Run: func(){}
+	})
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "cd",
+		Help: "Change directory",
+		LongHelp: "Change directory.",
+		Run: func(){}
+	})
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "cd",
+		Help: "Change directory",
+		LongHelp: "Change directory.",
+		Run: func(){}
+	})
+
+
+}
