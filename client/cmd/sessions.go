@@ -2,7 +2,7 @@ package cmd
 
 func init(){
 	genericCommand := &grumble.Command{
-		Name: "Sessions",
+		Name: "sessions",
 		Help: "Session Management",
 		LongHelp: ""
 	}
@@ -10,10 +10,22 @@ func init(){
 	App.AddCommand(genericCommand)
 
 	genericCommand.AddCommand(&grumble.Command{
-		Name: "download",
-		Help: "Download a file from your cwd to the implant.",
-		LongHelp: "Download a file from your cwd to the implant.",
+		Name: "use",
+		Help: "USe a session.",
+		LongHelp: "",
 		Run: func(){}
 	})
+
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "session",
+		Help: "Use a session.",
+		LongHelp: "",
+		Run: func(){
+
+
+			
+		}
+	})
+
 
 }
