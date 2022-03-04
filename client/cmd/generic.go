@@ -15,24 +15,28 @@ func init(){
 		LongHelp: "Download a file from your cwd to the implant.",
 		Run: func(){}
 	})
+	
+	genericCommand.AddCommand(&grumble.Command{
+		Name: "upload",
+		Help: "Upload a file.",
+		LongHelp: "Upload a file from the implant to the server.",
+		Run: func(){}
+	})
+
 	genericCommand.AddCommand(&grumble.Command{
 		Name: "ls",
 		Help: "List directory",
 		LongHelp: "Lists directory.",
 		Run: func(){}
 	})
+
 	genericCommand.AddCommand(&grumble.Command{
 		Name: "cd",
 		Help: "Change directory",
 		LongHelp: "Change directory.",
 		Run: func(){}
 	})
-	genericCommand.AddCommand(&grumble.Command{
-		Name: "cd",
-		Help: "Change directory",
-		LongHelp: "Change directory.",
-		Run: func(){}
-	})
+
 
 
 }
