@@ -18,15 +18,7 @@ func init() {
 }
 
 func init() {
-	genericCommand := &grumble.Command{
-		Name:     "sessions",
-		Help:     "Session Management",
-		LongHelp: "",
-	}
-
-	App.AddCommand(genericCommand)
-
-	genericCommand.AddCommand(&grumble.Command{
+	App.AddCommand(&grumble.Command{
 		Name:     "use",
 		Help:     "Use a session.",
 		LongHelp: "",
@@ -35,7 +27,7 @@ func init() {
 		},
 	})
 
-	genericCommand.AddCommand(&grumble.Command{
+	App.AddCommand(&grumble.Command{
 		Name:     "session",
 		Help:     "Use a session.",
 		LongHelp: "",
