@@ -3,7 +3,6 @@
 Currently isn't functional, still W.I.P.
 Implant is currently Windows only but the client/server is cross-platform.
 
-
 ## Features
 
 - Upload
@@ -12,8 +11,8 @@ Implant is currently Windows only but the client/server is cross-platform.
 
 ## Requirements
  
-- Vistual Studio
-- Go
+- Vistual Studio (C++ Implant)
+- Go ( client & teamserver )
 
 ## Future...
 
