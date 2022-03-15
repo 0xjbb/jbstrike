@@ -10,6 +10,7 @@ import (
 type ServerHandler struct {
 	ServerPort int
 	Listeners  []listeners.Listener
+	UsedPorts  []int
 	s          *http.Server
 }
 
@@ -57,6 +58,10 @@ func (sHandler *ServerHandler) HandleServerRequests() *mux.Router {
 }
 
 func (sHandler *ServerHandler) StartListener(w http.ResponseWriter, r *http.Request) {
+	port := r.FormValue("port")
+	listener := listeners.NewListener(port) // test port.
+	sHandler.Listeners[port] = listener
+	sHandler.UsedPorts = append(sHandler.UsedPorts, port) // Not sure if this is actually needed, will remove later if not.
 
 }
 
