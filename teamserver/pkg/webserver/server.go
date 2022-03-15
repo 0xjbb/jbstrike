@@ -45,11 +45,36 @@ func (sHandler *ServerHandler) HandleServerRequests() *mux.Router {
 		/client/agents/list
 		/client/agent/{id}/{command}
 	*/
+	router.HandleFunc("/client/listener/start", sHandler.StartListener)
+	router.HandleFunc("/client/listener/stop", sHandler.StopListener)
+	router.HandleFunc("/client/listener/remove", sHandler.RemoveListener)
+	router.HandleFunc("/client/listeners/list", sHandler.ListListeners)
 
-	router.HandleFunc("/client/listener/start", StartNewListener)
-	router.HandleFunc("/client/listener/stop", StopListener)
-	router.HandleFunc("/client/listener/stop", StopListener)
-	router.HandleFunc("/client/listeners/list", ListListeners)
+	router.HandleFunc("/client/agents/list", sHandler.ListAgents)               // Loop through all the listeners and get agents.
+	router.HandleFunc("/client/agent/{id}/{command}", sHandler.NewAgentCommand) // Loop through all the listeners and check if they have an agent with the ID, then give them the command.
 
 	return router
+}
+
+func (sHandler *ServerHandler) StartListener(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (sHandler *ServerHandler) StopListener(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (sHandler *ServerHandler) RemoveListener(w http.ResponseWriter, r *http.Request) {
+
+}
+func (sHandler *ServerHandler) ListListeners(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (sHandler *ServerHandler) ListAgents(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (sHandler *ServerHandler) NewAgentCommand(w http.ResponseWriter, r *http.Request) {
+
 }
