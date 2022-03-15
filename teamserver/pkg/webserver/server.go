@@ -70,6 +70,8 @@ func (sHandler *ServerHandler) StartListener(w http.ResponseWriter, r *http.Requ
 	sHandler.Listeners[port] = listener
 	sHandler.UsedPorts = append(sHandler.UsedPorts, port) // Not sure if this is actually needed, will remove later if not.
 
+	// do some chan magic here or w/e idk.
+	go sHandler.Listeners[port].Listen()
 }
 
 func (sHandler *ServerHandler) StopListener(w http.ResponseWriter, r *http.Request) {

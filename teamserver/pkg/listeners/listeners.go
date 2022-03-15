@@ -7,6 +7,7 @@ import (
 )
 
 type Listener struct {
+	Agents     []Agent
 	ListenPort int
 	gConfig    cfg.Config
 	s          *http.Server
