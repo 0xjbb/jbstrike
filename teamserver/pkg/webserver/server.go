@@ -14,7 +14,9 @@ type ServerHandler struct {
 }
 
 func (sHandler *ServerHandler) Start() {
-	sHandler.s = &http.Server{}
+	sHandler.s = &http.Server{
+		Handler: sHandler.HandleServerRequests(),
+	}
 
 	sHandler.s.ListenAndServe()
 }
@@ -32,9 +34,8 @@ func NewServer(gConfig cfg.Config) ServerHandler {
 	return s
 }
 
-func HandleServerRequests() *mux.Router {
+func (sHandler *ServerHandler) HandleServerRequests() *mux.Router {
 	router := mux.NewRouter()
-
 	/*
 		/client/listener/start --
 		/client/listener/stop -- pass ID as post var
@@ -44,6 +45,11 @@ func HandleServerRequests() *mux.Router {
 		/client/agents/list
 		/client/agent/{id}/{command}
 	*/
+
+	router.HandleFunc("/client/listener/start", StartNewListener)
+	router.HandleFunc("/client/listener/stop", StopListener)
+	router.HandleFunc("/client/listener/stop", StopListener)
+	router.HandleFunc("/client/listeners/list", ListListeners)
 
 	return router
 }
