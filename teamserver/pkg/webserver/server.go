@@ -1,8 +1,9 @@
 package webserver
 
 import (
-	"github.com/0xjbb/jbstrike/pkg/cfg"
-	"github.com/0xjbb/jbstrike/pkg/listeners"
+	"github.com/0xjbb/jbstrike/teamserver/pkg/cfg"
+	"github.com/0xjbb/jbstrike/teamserver/pkg/listeners"
+	"github.com/gorilla/mux"
 	"net/http"
 )
 
@@ -15,6 +16,7 @@ type ServerHandler struct {
 func (sHandler *ServerHandler) Start() {
 	sHandler.s = &http.Server{}
 
+	sHandler.s.ListenAndServe()
 }
 
 // Add some error checknig later
@@ -30,7 +32,9 @@ func NewServer(gConfig cfg.Config) ServerHandler {
 	return s
 }
 
-func HandleServerRequests(route string) {
+func HandleServerRequests() *mux.Router {
+	router := mux.NewRouter()
+
 	/*
 		/client/listener/start --
 		/client/listener/stop -- pass ID as post var
@@ -40,30 +44,6 @@ func HandleServerRequests(route string) {
 		/client/agents/list
 		/client/agent/{id}/{command}
 	*/
-	switch route {
-	case "/client/listener/start":
-		//l := Listener{}
-		//go l.Listen()
-		break
-	case "/client/listener/stop":
 
-		break
-	case "/client/listener/remove":
-
-		break
-	case "/client/listeners/list":
-		// list id:port for all listeners.
-		break
-
-	case "/client/agents/list":
-		// list all agents, their listeners and some info.
-		break
-	case "/client/agent/{id}/{command}": // figure this out.
-
-		break
-	default:
-		// error.
-		break
-
-	}
+	return router
 }
