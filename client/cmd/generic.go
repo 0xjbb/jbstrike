@@ -37,7 +37,7 @@ func init() {
 			if c.Args.String("path") == "" {
 				fmt.Println("Arg is set")
 			}
-
+			
 			fmt.Println("Arg is not set")
 
 			return nil
