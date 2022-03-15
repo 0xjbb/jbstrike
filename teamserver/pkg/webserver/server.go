@@ -1,10 +1,12 @@
 package webserver
 
 import (
+	"fmt"
 	"github.com/0xjbb/jbstrike/teamserver/pkg/cfg"
 	"github.com/0xjbb/jbstrike/teamserver/pkg/listeners"
 	"github.com/gorilla/mux"
 	"net/http"
+	"strconv"
 )
 
 type ServerHandler struct {
@@ -58,7 +60,12 @@ func (sHandler *ServerHandler) HandleServerRequests() *mux.Router {
 }
 
 func (sHandler *ServerHandler) StartListener(w http.ResponseWriter, r *http.Request) {
-	port := r.FormValue("port")
+	port, err := strconv.Atoi(r.FormValue("port"))
+
+	if err != nil {
+		fmt.Println("Error: ", err, " in function (sHandler *ServerHandler) StartListener")
+	}
+
 	listener := listeners.NewListener(port) // test port.
 	sHandler.Listeners[port] = listener
 	sHandler.UsedPorts = append(sHandler.UsedPorts, port) // Not sure if this is actually needed, will remove later if not.
